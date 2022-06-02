@@ -1,9 +1,10 @@
 import type { NextPage } from "next";
+import { useRouter } from "next/router";
 import Footer from "../components/footer";
 import Header from "../components/header";
 import Head from "next/head";
 const Index: NextPage = () => {
-
+  const router = useRouter();
   return (
     <>
       
@@ -34,7 +35,7 @@ const Index: NextPage = () => {
     ⠀⠀⠀⠀⠀⠀⠀⠀⠀
               </p>
               <br></br>
-              <p>- you've fallen from a rabbit hole...</p>
+              <p><span className="text-red-700">error:</span> <b>{router.asPath}</b>: no such a file or directory </p>
           </div>
 
     </>
