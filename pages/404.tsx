@@ -35,7 +35,7 @@ const Index: NextPage = () => {
     ⠀⠀⠀⠀⠀⠀⠀⠀⠀
               </p>
               <br></br>
-              <p><span className="text-red-700">error:</span> <b>{router.asPath}</b>: no such a file or directory </p>
+              <p><span className="text-red-700">error:</span> <b className="text-white">{router.asPath}</b>: no such a file or directory </p>
           </div>
 
     </>
