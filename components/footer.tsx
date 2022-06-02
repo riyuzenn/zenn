@@ -1,17 +1,28 @@
 
 import { useDate } from "../lib/useDate";
 import Marquee from "react-fast-marquee";
-
+import AudioController from "./audio/controller";
 export default function Footer() {
     const { date, time, wish } = useDate();
+    
+    function next() {
 
+    }
+    function prev() {
+
+    }
+    function play() {
+
+    }
     return (
         <div className="relative h-10 py-3 border-dashed border-t-[1px] border-white/20 ">
             <div className="absolute left-0">
               <div className="flex space-x-5">
-                {/* <button className="hover:bg-white/76 hover:text-black"><FiSkipBack size={13} /></button>
-                <button className="hover:bg-white/76 hover:text-black"><FiPlay size={13} /></button>
-                <button className="hover:bg-white/76 hover:text-black"><FiSkipForward size={13} /></button> */}
+                <AudioController 
+                  onNextClick={next} 
+                  onPrevClick={prev} 
+                  onPlayPauseClick={play}  
+                />
                 <div className="w-[50%]">
                   <Marquee gradient={false}>
                     <p>null</p>

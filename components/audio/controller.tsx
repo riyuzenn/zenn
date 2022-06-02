@@ -12,20 +12,17 @@ interface ITrack {
     src: string
 }
 type AudioParams = {
-    isPlaying: boolean,
     onPrevClick: () => void,
     onNextClick: () => void,
     onPlayPauseClick: () => void,
 }
-const AudioControl = ({
-    isPlaying, 
+const AudioController = ({
     onPrevClick, 
     onNextClick, 
     onPlayPauseClick 
 }: AudioParams) => {
-
-   return (
-       <div className="flex space-x-5">
+    return (
+       <div className="">
         <button className="hover:bg-white/76 hover:text-black" onClick={onPrevClick}>
             <FiSkipBack size={13} />
         </button>
@@ -38,3 +35,5 @@ const AudioControl = ({
        </div>
    ) 
 }
+
+export default AudioController;
