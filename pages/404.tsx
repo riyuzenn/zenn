@@ -15,7 +15,7 @@ const Index: NextPage = () => {
             <p>
 
  ______________________________________________________________
-< hu bu, gur qverpgbel lbh'er npprffvat qbrf'ag rkvfg ng nyy!  >
+< hu bu, gur qverpgbel lbher npprffvat qbrfag rkvfg ng nyy!  >
  --------------------------------------------------------------
    \
     \
