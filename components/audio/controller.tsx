@@ -22,7 +22,7 @@ const AudioController = ({
     onPlayPauseClick 
 }: AudioParams) => {
     return (
-       <div className="">
+       <div className="flex space-x-5">
         <button className="hover:bg-white/76 hover:text-black" onClick={onPrevClick}>
             <FiSkipBack size={13} />
         </button>
