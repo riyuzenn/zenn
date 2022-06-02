@@ -14,9 +14,9 @@ const Index: NextPage = () => {
       <div className="flex flex-col justify-center items-center my-10" style={{ lineHeight: 1.5 }}>
             <p>
 
- ______________________________________________________________
-< hu bu, gur qverpgbel lbher npprffvat qbrfag rkvfg ng nyy!  >
- --------------------------------------------------------------
+ ____________________________________________________________
+| hu bu, gur qverpgbel lbher npprffvat qbrfag rkvfg ng nyy!  |
+ ------------------------------------------------------------
    \
     \
         .--.
