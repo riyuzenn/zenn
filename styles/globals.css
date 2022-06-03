@@ -43,3 +43,18 @@ blockquote {
 blockquote p {
     line-height: 1.3;
 }
+
+.ascii {
+    white-space: pre;
+}
+
+b {
+    color: #fff;
+}
+
+ul {
+    list-style: disc;
+}
+ul.header {
+    list-style: none;
+}

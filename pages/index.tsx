@@ -2,9 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { SiTwitter, SiGithub, SiAboutdotme, SiDiscord } from "react-icons/si";
 import PostIndex from "../components/post";
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
+import data from "../zenn.config";
 
 
 const Index: NextPage = ({ posts }: any) => {
@@ -70,7 +68,7 @@ const Index: NextPage = ({ posts }: any) => {
         <br />
         <p>an <span>open-source</span> enthusiast who's passionate — obsessed in innovating and building things from scratch — on how stuff works.</p>
         <br />
-        <PostIndex posts={posts} />
+        <PostIndex posts={data.posts} pinnedPosts={data.pinnedPosts} />
         
 
     </>
@@ -78,34 +76,3 @@ const Index: NextPage = ({ posts }: any) => {
 }
 
 export default Index;
-export async function getStaticProps() {
-  // Read the pages/posts dir
-  let files = fs.readdirSync(path.join("pages/posts"));
-
-  // Get only the mdx files
-  files = files.filter((file) => file.split(".")[1] === "mdx");
-
-  // Read each file and extract front matter
-  const posts = await Promise.all(
-    files.map((file) => {
-      const mdWithData = fs.readFileSync(
-        path.join("pages/posts", file),
-        "utf-8"
-      );
-
-      const { data: metadata } = matter(mdWithData);
-      
-      return {
-        metadata,
-        slug: file.split(".")[0],
-      };
-    })
-  );
-
-  // Return all the posts and slug as props
-  return {
-    props: {
-      posts,
-    },
-  };
-}

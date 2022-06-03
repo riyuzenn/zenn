@@ -34,11 +34,7 @@ export default function Footer() {
             <div className="absolute right-0">
               <div className="flex space-x-3">
                 <div className="flex space-x-1">
-                <p><a>en</a></p> 
-                <p>|</p>
-                <p><a>es</a></p>
-                <p>|</p>
-                <p><a>jp</a></p>
+                <p><a></a></p> 
                 <p>|</p>
                 </div>
                 <p>{`${date} - ${time}`}</p>

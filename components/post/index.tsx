@@ -1,21 +1,19 @@
 
 import Link from "next/link";
 
-interface Metadata {
+
+interface IPost {
     title: string,
     desc: string,
     readtime: string,
     date: string,
     slug: string,
-    pin: boolean,
-}
-interface IPost {
-    metadata: Metadata,
 }
 type Post = {
-    posts: IPost[]
+    posts: IPost[],
+    pinnedPosts: IPost[],
 }
-export default function PostIndex({ posts }: Post) {
+export default function PostIndex({ posts, pinnedPosts }: Post) {
     return (
         <>
             <p><span className="bg-[#75ACB3] text-black px-2">BLOG POST</span></p>
@@ -29,9 +27,9 @@ export default function PostIndex({ posts }: Post) {
                             <li>
                                 
                                 <div className="flex space-x-2">
-                                    <p>{`[${post.metadata.date}] -`}</p>
-                                    <Link href={`/posts/${post.metadata.slug}`} key={post.metadata.slug}>
-                                        <a className="underline">{`${post.metadata.title.toLowerCase()} (${post.metadata.readtime})...`}</a>
+                                    <p>{`[${post.date}] -`}</p>
+                                    <Link href={`/posts/${post.slug}`} key={post.slug}>
+                                        <a className="underline">{`${post.title.toLowerCase()} (${post.readtime})...`}</a>
                                     </Link>
                                 </div>
                             </li>
