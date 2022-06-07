@@ -10,7 +10,7 @@ const AboutPage: NextPage = () => {
                 <p>[] send me a message : </p>
                 <input id="msg" autoComplete="off" className="bg-black outline-none text-white/50"></input>
             </form>
-            <p className="text-[10px]">don't worry i use e2ee. your msg is safely stored</p>
+            <p className="text-[10px]">don't worry i use aes. your msg is safely stored</p>
             
         </>
     )

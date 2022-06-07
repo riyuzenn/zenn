@@ -15,39 +15,33 @@
   
   /* Track */
   ::-webkit-scrollbar-track {
-    background: transparent; 
+    background: #000; 
   }
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: rgb(41, 41, 41); 
+    background: rgb(32, 32, 32); 
   }
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: rgb(53, 53, 53); 
+    background: rgb(27, 27, 27); 
   }
 
-/* body {
-    background-color: black;
-    color: rgba(255, 255, 255, 0.76);
-    font-family: 'JetBrains Mono';
-    font-weight: 200;
-    line-height: 2;
-    letter-spacing: 1.5;
-    font-size: 12px;
-} */
+
 
 body {
+    font-weight: 200;
     background-color: #000000;
-    background: radial-gradient(ellipse at right 34% bottom 5%, #332020, #000000 80%, #000000);
+    background: radial-gradient(ellipse at right 34% bottom 5%, #332020, #000000 80%, #000000) fixed;
     background-position: left;
-    height: 100vh;
+    height: 95vh;
     margin: 0;
-    overflow: hidden;
+    overflow-x: hidden;
     color: rgba(255, 255, 255, 0.76);
     font-size: 12px;
     font-family: 'JetBrains Mono', monospace;
+
   }
   body::after {
     content: "";
@@ -58,22 +52,8 @@ body {
     width: 100vw;
     height: 100vh;
     background: repeating-linear-gradient(0deg, black, black 1px, transparent, transparent 2px);
-    /* background: none; */
     pointer-events: none;
   }
-  body::before {
-    content: "";
-    position: absolute;
-    z-index: 1000;
-    opacity: 0.4;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: radial-gradient(ellipse at right 34% bottom 5%, transparent 60%, #000000);
-    pointer-events: none;
-  }
-
 h2, h3, h4 {
     color: #fff;
     font-weight: bold;
