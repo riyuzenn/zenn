@@ -4,7 +4,7 @@ export default function Header() {
     const router = useRouter();
     
     return (
-        <div className="flex h-10 border-dashed border-y-[1px] border-white/20 items-center justify-end px-5 ">
+        <div className="flex h-10 border-dashed border-y-[1px] mt-10 border-white/20 items-center justify-end px-5 ">
             <ul className="flex space-x-5 text-[13px] header">
               <li><Link href={{ pathname: '/', query: { ref: 'nav' } }}><a >~</a></Link></li> 
               <li className="hover:bg-none">/</li> 

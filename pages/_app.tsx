@@ -7,7 +7,7 @@ import { MDXProvider } from '@mdx-js/react';
 function zenn({ Component, pageProps }: AppProps) {
   return (
     <>
-      <div className={pageProps.noLayout ? '' : 'flex flex-col h-auto justify-center my-5'}>
+      <div className={pageProps.noLayout ? '' : 'flex flex-col h-auto justify-center'}>
         <div className={pageProps.noLayout ? '' : 'w-[90%] h-[90%] max-h-xl xl:max-w-[50%] lg:max-w-[50%] md:max-w-[50%] sm:max-w-[90%] mr-auto ml-auto'}>
           {pageProps.noLayout ? <></> : <Header />}
           <div className="my-10">

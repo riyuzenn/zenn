@@ -15,7 +15,7 @@ export default function Footer() {
 
     }
     return (
-        <div className="relative h-10 py-3 border-dashed border-t-[1px] border-white/20 ">
+        <div className="relative h-10 py-3 border-dashed border-t-[1px] border-white/20 mb-10 ">
             <div className="absolute left-0">
               <div className="flex space-x-5">
                 <AudioController 
