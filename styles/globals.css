@@ -7,7 +7,28 @@
     background-color: rgba(255, 255, 255, .76);
     color: #000
 }
-body {
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(41, 41, 41); 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(53, 53, 53); 
+  }
+
+/* body {
     background-color: black;
     color: rgba(255, 255, 255, 0.76);
     font-family: 'JetBrains Mono';
@@ -15,8 +36,43 @@ body {
     line-height: 2;
     letter-spacing: 1.5;
     font-size: 12px;
-}
+} */
 
+body {
+    background-color: #000000;
+    background: radial-gradient(ellipse at right 34% bottom 5%, #332020, #000000 80%, #000000);
+    background-position: left;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 12px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  body::after {
+    content: "";
+    position: absolute;
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: repeating-linear-gradient(0deg, black, black 1px, transparent, transparent 2px);
+    /* background: none; */
+    pointer-events: none;
+  }
+  body::before {
+    content: "";
+    position: absolute;
+    z-index: 1000;
+    opacity: 0.4;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(ellipse at right 34% bottom 5%, transparent 60%, #000000);
+    pointer-events: none;
+  }
 
 h2, h3, h4 {
     color: #fff;
@@ -31,7 +87,9 @@ h1 {
 a:hover {
     background-color: rgba(255, 255, 255, 0.76);
     color: black;
+
 }
+
 
 blockquote {
     display: flex; 
@@ -57,4 +115,37 @@ ul {
 }
 ul.header {
     list-style: none;
+}
+
+.container {
+    display: inline-block;
+}
+
+.intro {
+    line-height: 2;
+}
+
+.prof::after{
+    content: "▐";
+    font-size: 12px;
+    line-height: 30px;
+    animation: blink .80s step-end infinite;
+}
+
+@keyframes blink {
+    from, to { color: transparent }
+    50% { color: rgba(255, 255, 255, 0.5) }
+}
+
+.fade-in {
+    animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
 }

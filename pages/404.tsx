@@ -3,13 +3,8 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Head from "next/head";
 const Index: NextPage = () => {
-  const [path, setPath] = useState("");
-  const [ascii, setAscii] = useState("");
+  const { asPath } = useRouter();
 
-  const router = useRouter();
-  useEffect(() => {
-    setPath(router.asPath);
-  },[])
 
   return (
     <>
@@ -40,7 +35,7 @@ const Index: NextPage = () => {
          
         </p>
         <br></br>
-        <p><span className="text-red-700">error:</span> <b className="text-white">{`~${path}`}</b>: no such a file or directory </p>
+        <p><span className="text-red-700">error:</span> <b className="text-white">{`~${asPath}`}</b>: no such a file or directory </p>
       </div>
 
     </>
