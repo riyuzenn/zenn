@@ -6,7 +6,6 @@ import Head from "next/head";
 import { SiTwitter, SiGithub, SiAboutdotme, SiDiscord } from "react-icons/si";
 import PostIndex from "../components/post";
 import data from "../zenn.config";
-import { useRouter } from "next/router";
 
 export default function IndexPage() {
     const [a, b] = useState(false);
