@@ -1,19 +1,29 @@
 import Typed from "react-typed";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import Head from "next/head";
 import { SiTwitter, SiGithub, SiAboutdotme, SiDiscord } from "react-icons/si";
 import PostIndex from "../components/post";
 import data from "../zenn.config";
+import type { NextPage, NextPageContext } from "next";
+import { useRouter } from "next/router";
+import queryString from 'querystring';
 
-export default function IndexPage() {
+const IndexPage : NextPage = () => {
     const [a, b] = useState(false);
-    
+    const [hasFade, setHasFade] = useState(true);
+    const router = useRouter();
+    useEffect(() => { 
+        
+        const params = new URLSearchParams(window?.location.search);
+        if (params.get('ref') === 'nav') b(true); setHasFade(false);
 
+    }, [])
+    
     return (
         <>
-            <div className={`flex h-[80vh] justify-center items-center ${a ? 'hidden': 'block'}`}>
+            <div className={`flex h-[80vh] justify-center items-center ${a ? 'hidden' : 'block'}`}>
                 <div className="flex-col leading-4 min-w-[40%] max-w-[40%]">
                     <button className="hover:underline" onClick={() => b(true)}>skip intro <span>&rarr;</span></button>
                     <br />
@@ -28,7 +38,7 @@ export default function IndexPage() {
                 
             
             </div>
-            <div className={`flex flex-col h-auto justify-center my-5 fade-in ${a ? 'block': 'hidden'}`}>
+            <div className={`flex flex-col h-auto justify-center my-5 ${a ? 'block': 'hidden'} ${hasFade ? 'fade-in' : ''}`}>
                 <div className="w-[90%] h-[90%] max-h-xl xl:max-w-[50%] lg:max-w-[50%] md:max-w-[50%] sm:max-w-[90%] mr-auto ml-auto">
                     <Header />
                     <div className="my-10">
@@ -101,8 +111,10 @@ export default function IndexPage() {
         </>
     )
 }
+export default IndexPage;
 
-export async function getStaticProps(ctx: any) {
+export async function getStaticProps(ctx: NextPageContext) {
+    
     return {
         props: { noLayout : true }
     }
