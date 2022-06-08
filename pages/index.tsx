@@ -7,38 +7,20 @@ import { SiTwitter, SiGithub, SiAboutdotme, SiDiscord } from "react-icons/si";
 import PostIndex from "../components/post";
 import data from "../zenn.config";
 import type { NextPage, NextPageContext } from "next";
-import { useRouter } from "next/router";
-import queryString from 'querystring';
+
 
 const IndexPage : NextPage = () => {
     const [a, b] = useState(false);
-    const [hasFade, setHasFade] = useState(true);
-    const router = useRouter();
+
     useEffect(() => { 
-        
         const params = new URLSearchParams(window?.location.search);
-        if (params.get('ref') === 'nav') b(true); setHasFade(false);
+        if (params.get('ref') === 'nav') b(true);
 
     }, [])
     
     return (
         <>
-            <div className={`flex h-[80vh] justify-center items-center ${a ? 'hidden' : 'block'}`}>
-                <div className="flex-col leading-4 min-w-[40%] max-w-[40%]">
-                    <button className="hover:underline" onClick={() => b(true)}>skip intro <span>&rarr;</span></button>
-                    <br />
-                    <br />
-                    <Typed 
-                        className="intro"
-                        strings={['when you connect to the internet, you become subject to many threats. as a developer, my goal is to design and innovate open source, highly scalable secure environments for folks who value their privacy.']} 
-                        onComplete={() => setTimeout(() => { b(true) }, 1000)}
-                        typeSpeed={30}
-                    />
-                </div>
-                
-            
-            </div>
-            <div className={`flex flex-col h-auto justify-center my-5 ${a ? 'block': 'hidden'} ${hasFade ? 'fade-in' : ''}`}>
+            <div className={`flex flex-col h-auto justify-center my-5 ${a ? 'fade-in block': 'hidden'}`}>
                 <div className="w-[90%] h-[90%] max-h-xl xl:max-w-[50%] lg:max-w-[50%] md:max-w-[50%] sm:max-w-[90%] mr-auto ml-auto">
                     <Header />
                     <div className="my-10">
@@ -107,6 +89,22 @@ const IndexPage : NextPage = () => {
                     <Footer />
                 </div>
             </div>
+            <div className={`flex h-[80vh] justify-center items-center ${a ? 'hidden' : 'block'}`}>
+                <div className="flex-col leading-4 min-w-[40%] max-w-[40%]">
+                    <button className="hover:underline" onClick={() => b(true)}>skip intro <span>&rarr;</span></button>
+                    <br />
+                    <br />
+                    <Typed 
+                        className="intro"
+                        strings={['when you connect to the internet, you become subject to many threats. as a developer, my goal is to design and innovate open source, highly scalable secure environments for folks who value their privacy.']} 
+                        onComplete={() => setTimeout(() => { b(true) }, 1000)}
+                        typeSpeed={30}
+                    />
+                </div>
+                
+            
+            </div>
+            
             
         </>
     )
