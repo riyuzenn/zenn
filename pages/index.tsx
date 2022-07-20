@@ -77,7 +77,7 @@ const IndexPage : NextPage = () => {
                         <br />
                         <p><span className="bg-[#75ACB3] text-black px-2">ABOUT ME</span></p>
                         <br />
-                        <p>an <span>open-source</span> enthusiast who's passionate — obsessed in innovating and building things from scratch — on how stuff works.</p>
+                        <p>an <span>&#123;open-source,linux,privacy&#125;</span> enthusiast who's passionate on how stuff works — obsessed in innovating and building things from scratch.</p>
                         <br />
                         <PostIndex posts={data.posts} pinnedPosts={data.pinnedPosts} />
                         
