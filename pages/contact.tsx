@@ -10,7 +10,7 @@ const AboutPage: NextPage = () => {
             <hr className="my-4 border-dashed border-white/50" />
             <form onSubmit={(e: React.FormEvent) => { e.preventDefault(); }} className="flex space-x-3">
                 <p>[] send me a message : </p>
-                <input id="msg" autoComplete="off" className="bg-black outline-none text-white/50"></input>
+                <input id="msg" autoComplete="off" className="bg-transparent outline-none text-white/50"></input>
             </form>
             <p className="text-[10px]">don't worry i use aes. your msg is safely stored</p>
             
