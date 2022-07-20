@@ -3,6 +3,15 @@ const withMDX = require('@next/mdx')({
 })
 /** @type {import('next').NextConfig} */
 module.exports = withMDX({
-  pageExtensions: ['ts', 'tsx', 'mdx'],
-  reactStrictMode: true,
+   pageExtensions: ['ts', 'tsx', 'mdx'],
+   reactStrictMode: true,
+   async redirects() {
+      return [
+         {
+            source: '/dotfiles',
+            destination: 'https://github.com/riyuzenn/dotfiles',
+            permanent: false,
+         }
+      ]
+   } 
 })
