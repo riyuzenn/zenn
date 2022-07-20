@@ -11,6 +11,7 @@ module.exports = {
        {
           title: "my desktop configuration",
           desc: "all of my configs to personalize my own system",
+          readtime: "1 min",
           date: "07/20/2022",
           slug: "dotfiles"
        }
